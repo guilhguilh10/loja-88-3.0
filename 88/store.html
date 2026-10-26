@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutStore - Loja de Futebol</title>
+    <!-- LINK PARA O CSS SEPARADO -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABEÇALHO FIXO -->
+    <header class="navbar">
+        <a href="#" onclick="mudarTela('menu-principal')" class="logo">⚡ FUTSTORE</a>
+        <div style="display: flex; gap: 15px; align-items: center;">
+            <a href="#" onclick="mudarTela('carrinho')" class="carrinho-topo" style="text-decoration: none; color: inherit;">
+                🛒 Carrinho: <strong id="contador-carrinho-topo">0</strong> itens
+            </a>
+            <a href="#" onclick="mudarTela('login')" id="btn-usuario-topo" style="text-decoration: none; color: #00ff9d; font-weight: bold;">
+                🔐 Login
+            </a>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- ============================================================ -->
+        <!-- TELA 1: CAMISETAS DOS TIMES E SELEÇÕES                       -->
+        <!-- ============================================================ -->
+        <section id="camisetas" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+                <h1>👕 Camisetas dos Principais Times e Seleções</h1>
+            </div>
+
+            <div class="grid-produtos">
+                <!-- Barcelona -->
+                <div class="card-produto">
+                    <img src="img/barcelona.jpg" alt="Camiseta Barcelona">
+                    <h3>FC Barcelona</h3>
+                    <p class="descricao">Titular 2024/25 - Nike Dri-FIT</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('FC Barcelona', 349.90, 'img/barcelona.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Bayern de Munique -->
+                <div class="card-produto">
+                    <img src="img/bayern.jpg" alt="Camiseta Bayern de Munique">
+                    <h3>Bayern de Munique</h3>
+                    <p class="descricao">Titular Red 2024/25 - Adidas</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Bayern de Munique', 349.90, 'img/bayern.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Real Madrid -->
+                <div class="card-produto">
+                    <img src="img/realmadri.jpg" alt="Camiseta Real Madrid">
+                    <h3>Real Madrid</h3>
+                    <p class="descricao">Titular Blanca 2024/25 - Adidas</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Real Madrid', 349.90, 'img/realmadri.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- PSG -->
+                <div class="card-produto">
+                    <img src="img/psg.jpg" alt="Camiseta PSG">
+                    <h3>Paris Saint-Germain</h3>
+                    <p class="descricao">Titular Jordan Brand 2024/25</p>
+                    <p class="preco">R$ 329,90</p>
+                    <button onclick="adicionarAoCarrinho('Paris Saint-Germain', 329.90, 'img/psg.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Manchester City -->
+                <div class="card-produto">
+                    <img src="img/city.jpg" alt="Camiseta Manchester City">
+                    <h3>Manchester City</h3>
+                    <p class="descricao">Titular Blue Sky 2024/25 - Puma</p>
+                    <p class="preco">R$ 329,90</p>
+                    <button onclick="adicionarAoCarrinho('Manchester City', 329.90, 'img/city.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Flamengo -->
+                <div class="card-produto">
+                    <img src="img/botafogo.jpg" alt="Camiseta Flamengo">
+                    <h3>Flamengo</h3>
+                    <p class="descricao">Rubro-Negra Oficial 1 - Adidas</p>
+                    <p class="preco">R$ 299,90</p>
+                    <button onclick="adicionarAoCarrinho('Flamengo', 299.90, 'img/botafogo.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Brasil -->
+                <div class="card-produto">
+                    <img src="img/brasil.jpg" alt="Camiseta Seleção Brasileira">
+                    <h3>Brasil</h3>
+                    <p class="descricao">Titular Amarela 2024/25 - Nike</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Brasil', 349.90, 'img/brasil.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- França -->
+                <div class="card-produto">
+                    <img src="img/frança.jpg" alt="Camiseta Seleção da França">
+                    <h3>Seleção da França</h3>
+                    <p class="descricao">Titular Azul Oficial 2024/25 - Nike</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Seleção da França', 349.90, 'img/frança.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Japão -->
+                <div class="card-produto">
+                    <img src="img/japao.jpg" alt="Camiseta Seleção do Japão">
+                    <h3>Seleção do Japão</h3>
+                    <p class="descricao">Edição Especial Y-3 2024/25 - Adidas</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Seleção do Japão', 349.90, 'img/japao.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Espanha -->
+                <div class="card-produto">
+                    <img src="img/espanha.jpg" alt="Camiseta Seleção da Espanha">
+                    <h3>Seleção da Espanha</h3>
+                    <p class="descricao">Titular Vermelha 2024/25 - Adidas</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Seleção da Espanha', 349.90, 'img/espanha.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Palmeiras -->
+                <div class="card-produto">
+                    <img src="img/palmeiras.jpg" alt="Camiseta Palmeiras">
+                    <h3>Palmeiras</h3>
+                    <p class="descricao">Titular Verde 2024/25 - Puma</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Palmeiras', 349.90, 'img/palmeiras.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Holanda -->
+                <div class="card-produto">
+                    <img src="img/holanda.jpg" alt="Camiseta Seleção da Holanda">
+                    <h3>Seleção da Holanda</h3>
+                    <p class="descricao">Titular Laranja 2024/25 - Nike</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Seleção da Holanda', 349.90, 'img/holanda.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Santos -->
+                <div class="card-produto">
+                    <img src="img/santos.jpg" alt="Camiseta Santos FC">
+                    <h3>Santos FC</h3>
+                    <p class="descricao">Uniforme Especial - Umbro / Banco BMG</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Santos FC', 349.90, 'img/santos.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <!-- Argentina -->
+                <div class="card-produto">
+                    <img src="img/argentina.jpg" alt="Camiseta Seleção Argentina">
+                    <h3>Argentina</h3>
+                    <p class="descricao">Titular Albiceleste 2024/25 - Adidas</p>
+                    <p class="preco">R$ 349,90</p>
+                    <button onclick="adicionarAoCarrinho('Argentina', 349.90, 'img/argentina.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA 2: CHUTEIRAS                                            -->
+        <!-- ============================================================ -->
+        <section id="chuteiras" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+                <h1>👟 Chuteiras de Performance</h1>
+            </div>
+
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="img/caneleira1.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (1)', 499.90, 'img/caneleira1.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira2.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (2)', 459.90, 'img/chuteira2.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira3.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (3)', 399.90, 'img/chuteira3.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira4.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (4)', 499.90, 'img/chuteira4.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira5.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (5)', 459.90, 'img/chuteira5.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira6.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (6)', 399.90, 'img/chuteira6.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira7.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (7)', 499.90, 'img/chuteira7.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira8.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (8)', 459.90, 'img/chuteira8.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira9.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (9)', 399.90, 'img/chuteira9.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira10.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (10)', 499.90, 'img/chuteira10.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira11.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (11)', 459.90, 'img/chuteira11.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira12.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (12)', 399.90, 'img/chuteira12.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira13.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (13)', 499.90, 'img/chuteira13.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira14.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (14)', 459.90, 'img/chuteira14.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira15.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (15)', 399.90, 'img/chuteira15.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira16.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (16)', 499.90, 'img/chuteira16.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira17.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (17)', 459.90, 'img/chuteira17.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira18.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (18)', 399.90, 'img/chuteira18.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira19.jpg" alt="Nike Mercurial">
+                    <h3>Nike Mercurial Superfly</h3>
+                    <p class="descricao">Campo Profissional SG</p>
+                    <p class="preco">R$ 499,90</p>
+                    <button onclick="adicionarAoCarrinho('Nike Mercurial Superfly (19)', 499.90, 'img/chuteira19.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira20.jpg" alt="Adidas Predator">
+                    <h3>Adidas Predator Elite</h3>
+                    <p class="descricao">Campo e Grama Sintética</p>
+                    <p class="preco">R$ 459,90</p>
+                    <button onclick="adicionarAoCarrinho('Adidas Predator Elite (20)', 459.90, 'img/chuteira20.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/chuteira21.jpg" alt="Puma Future">
+                    <h3>Puma Future Ultimate</h3>
+                    <p class="descricao">Society e Futsal</p>
+                    <p class="preco">R$ 399,90</p>
+                    <button onclick="adicionarAoCarrinho('Puma Future Ultimate (21)', 399.90, 'img/chuteira21.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA 3: SUPLEMENTOS                                          -->
+        <!-- ============================================================ -->
+        <section id="suplementos" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+                <h1>⚡ Suplementos Desportivos</h1>
+            </div>
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="img/creatina.jpg" alt="Creatina Monohidratada">
+                    <h3>Creatina Monohidratada 300g</h3>
+                    <p class="descricao">100% Pura - Aumento de força e explosão</p>
+                    <p class="preco">R$ 89,90</p>
+                    <button onclick="adicionarAoCarrinho('Creatina Monohidratada 300g', 89.90, 'img/creatina.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+                <div class="card-produto">
+                    <img src="img/whey.jpg" alt="Whey Protein Concentrado">
+                    <h3>Whey Protein Concentrado 900g</h3>
+                    <p class="descricao">24g de proteína por dose - Recuperação muscular</p>
+                    <p class="preco">R$ 119,90</p>
+                    <button onclick="adicionarAoCarrinho('Whey Protein Concentrado 900g', 119.90, 'img/whey.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+                <div class="card-produto">
+                    <img src="img/pre-treino.jpg" alt="Pré-Treino Intense">
+                    <h3>Pré-Treino Intense 300g</h3>
+                    <p class="descricao">Foco e energia máxima para o teu treino</p>
+                    <p class="preco">R$ 99,90</p>
+                    <button onclick="adicionarAoCarrinho('Pré-Treino Intense 300g', 99.90, 'img/pre-treino.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA 4: ACESSÓRIOS                                           -->
+        <!-- ============================================================ -->
+        <section id="acessorios" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Voltar ao Menu Principal</a>
+                <h1>⚽ Bolas, Caneleiras e Bolsas</h1>
+            </div>
+
+            <div class="grid-produtos">
+                <div class="card-produto">
+                    <img src="img/bola1.jpg" alt="Bola de Campo">
+                    <h3>Bola de Futebol Campo Pro</h3>
+                    <p class="descricao">Oficial de campo termocolada</p>
+                    <p class="preco">R$ 149,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola de Futebol Campo Pro', 149.90, 'img/bola1.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola2.jpg" alt="Bola de Futsal">
+                    <h3>Bola de Futsal Max</h3>
+                    <p class="descricao">Quique reduzido para quadra</p>
+                    <p class="preco">R$ 129,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola de Futsal Max', 129.90, 'img/bola2.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola3.jpg" alt="Bola Society">
+                    <h3>Bola Society Grip</h3>
+                    <p class="descricao">Para grama sintética</p>
+                    <p class="preco">R$ 119,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola Society Grip', 119.90, 'img/bola3.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola4.jpg" alt="Bola de Treino">
+                    <h3>Bola de Treino Trainer</h3>
+                    <p class="descricao">Alta durabilidade para treinos</p>
+                    <p class="preco">R$ 89,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola de Treino Trainer', 89.90, 'img/bola4.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola5.jpg" alt="Bola Champions League">
+                    <h3>Bola Champions League</h3>
+                    <p class="descricao">Réplica oficial da competição</p>
+                    <p class="preco">R$ 179,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola Champions League', 179.90, 'img/bola5.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola6.jpg" alt="Bola Brasileirão">
+                    <h3>Bola Brasileirão Match</h3>
+                    <p class="descricao">Design oficial do campeonato</p>
+                    <p class="preco">R$ 169,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola Brasileirão Match', 169.90, 'img/bola6.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola7.jpg" alt="Bola Retrô de Couro">
+                    <h3>Bola Retrô Classique</h3>
+                    <p class="descricao">Estilo vintage em couro sintético</p>
+                    <p class="preco">R$ 139,90</p>
+                    <button onclick="adicionarAoCarrinho('Bola Retrô Classique', 139.90, 'img/bola7.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/caneleira1.jpg" alt="Caneleira Carbon Shield">
+                    <h3>Caneleira Carbon Shield</h3>
+                    <p class="descricao">Proteção ultra-leve em fibra de carbono</p>
+                    <p class="preco">R$ 79,90</p>
+                    <button onclick="adicionarAoCarrinho('Caneleira Carbon Shield', 79.90, 'img/caneleira1.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/caneleira2.jpg" alt="Caneleira Pro Flex">
+                    <h3>Caneleira Pro Flex</h3>
+                    <p class="descricao">Com tornozeleira acoplada</p>
+                    <p class="preco">R$ 59,90</p>
+                    <button onclick="adicionarAoCarrinho('Caneleira Pro Flex', 59.90, 'img/caneleira2.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/caneleira4.jpg" alt="Caneleira Lite Protect">
+                    <h3>Caneleira Lite Protect</h3>
+                    <p class="descricao">Modelo compacto com meião de fixação</p>
+                    <p class="preco">R$ 49,90</p>
+                    <button onclick="adicionarAoCarrinho('Caneleira Lite Protect', 49.90, 'img/caneleira4.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/caneleira5.jpg" alt="Caneleira Junior">
+                    <h3>Caneleira Junior Performance</h3>
+                    <p class="descricao">Tamanho infantil reforçado</p>
+                    <p class="preco">R$ 39,90</p>
+                    <button onclick="adicionarAoCarrinho('Caneleira Junior Performance', 39.90, 'img/caneleira5.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bolsa1.jpg" alt="Mala de Viagem Esportiva">
+                    <h3>Mala Esportiva Duffle 50L</h3>
+                    <p class="descricao">Com compartimento separado para chuteira</p>
+                    <p class="preco">R$ 189,90</p>
+                    <button onclick="adicionarAoCarrinho('Mala Esportiva Duffle 50L', 189.90, 'img/bolsa1.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola2.jpg" alt="Mochila de Treino">
+                    <h3>Mochila Esportiva Pro</h3>
+                    <p class="descricao">Impermeável e com porta-bola frontal</p>
+                    <p class="preco">R$ 159,90</p>
+                    <button onclick="adicionarAoCarrinho('Mochila Esportiva Pro', 159.90, 'img/bola2.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bolsa3.jpg" alt="Bolsa Transversal">
+                    <h3>Bolsa Transversal Shoulder Bag</h3>
+                    <p class="descricao">Ideal para transporte de objetos pessoais</p>
+                    <p class="preco">R$ 79,90</p>
+                    <button onclick="adicionarAoCarrinho('Bolsa Transversal Shoulder Bag', 79.90, 'img/bolsa3.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bola4.jpg" alt="Sacola Gymsack">
+                    <h3>Sacola Esportiva Gymsack</h3>
+                    <p class="descricao">Leve com fechamento em cordão</p>
+                    <p class="preco">R$ 39,90</p>
+                    <button onclick="adicionarAoCarrinho('Sacola Esportiva Gymsack', 39.90, 'img/bola4.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+
+                <div class="card-produto">
+                    <img src="img/bolsa5.jpg" alt="Bolsa Esportiva Média">
+                    <h3>Bolsa de Treino Medium 30L</h3>
+                    <p class="descricao">Espaçosa para roupas e acessórios</p>
+                    <p class="preco">R$ 129,90</p>
+                    <button onclick="adicionarAoCarrinho('Bolsa de Treino Medium 30L', 129.90, 'img/bolsa5.jpg')" class="btn-comprar">Adicionar ao Carrinho</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA INICIAL: MENU PRINCIPAL                                 -->
+        <!-- ============================================================ -->
+        <section id="menu-principal" class="tela">
+            <div class="boas-vindas">
+                <h1>BEM-VINDO À FUTSTORE! ⚽</h1>
+                <h2>Qual é a sua procura hoje?</h2>
+                <p>Escolha uma categoria abaixo para ver os produtos disponíveis:</p>
+            </div>
+
+            <div class="grid-categorias">
+                <div class="card-categoria">
+                    <div class="icone-categoria">👕</div>
+                    <h3>Camisetas</h3>
+                    <p>Mantos sagrados dos melhores times do mundo</p>
+                    <a href="#" onclick="mudarTela('camisetas')" class="btn-acessar">Ver Camisetas ➔</a>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="icone-categoria">👟</div>
+                    <h3>Chuteiras</h3>
+                    <p>Campo, Society e Futsal de alta performance</p>
+                    <a href="#" onclick="mudarTela('chuteiras')" class="btn-acessar">Ver Chuteiras ➔</a>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="icone-categoria">⚡</div>
+                    <h3>Suplementos</h3>
+                    <p>Creatinas, wheys e pré-treinos para alta performance</p>
+                    <a href="#" onclick="mudarTela('suplementos')" class="btn-acessar">Ver Suplementos ➔</a>
+                </div>
+
+                <div class="card-categoria">
+                    <div class="icone-categoria">⚽</div>
+                    <h3>Acessórios</h3>
+                    <p>Bolas, caneleiras e bolsas esportivas</p>
+                    <a href="#" onclick="mudarTela('acessorios')" class="btn-acessar">Ver Acessórios ➔</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA DO CARRINHO DE COMPRAS                                  -->
+        <!-- ============================================================ -->
+        <section id="carrinho" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Continuar Comprando</a>
+                <h1>🛒 O seu Carrinho de Compras</h1>
+            </div>
+
+            <div style="background: rgba(20, 24, 33, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 25px; max-width: 700px; margin: 0 auto;">
+                <div id="itens-carrinho">
+                    <!-- Os itens do carrinho entram aqui dinamicamente -->
+                </div>
+                
+                <div id="footer-carrinho" style="display: none; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding-top: 20px; text-align: right;">
+                    <h3 style="color: #fff; margin-bottom: 15px;">Total Geral: <span id="total-geral-carrinho" style="color: #00ff9d;">R$ 0,00</span></h3>
+                    <button onclick="iniciarCheckout()" class="btn-acessar" style="width: 100%; text-align: center; border: none; cursor: pointer;">Finalizar Compra ➔</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA DE LOGIN / IDENTIFICAÇÃO                                -->
+        <!-- ============================================================ -->
+        <section id="login" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('menu-principal')" class="btn-voltar">⬅ Voltar ao Menu</a>
+                <h1>🔐 Identificação do Cliente</h1>
+            </div>
+
+            <div style="max-width: 450px; margin: 0 auto; background: rgba(20, 24, 33, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 30px;">
+                <form onsubmit="processarLogin(event)">
+                    <p style="color: #8b95a5; font-size: 14px; margin-bottom: 20px;">Para aceder ao carrinho e finalizar o pedido, entre na sua conta:</p>
+                    
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <label style="display: block; font-size: 13px; margin-bottom: 5px; color: #ffffff;">Usuário ou E-mail:</label>
+                        <input type="text" id="login-usuario" required placeholder="O seu usuário (ex: admin)" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+                    </div>
+
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <label style="display: block; font-size: 13px; margin-bottom: 5px; color: #ffffff;">Senha:</label>
+                        <input type="password" id="login-senha" required placeholder="Sua senha (ex: 123)" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+                    </div>
+
+                    <div id="msg-erro-login" style="display: none; background: rgba(255,0,0,0.2); border: 1px solid rgba(255,0,0,0.4); color: #ff6b6b; padding: 10px; border-radius: 8px; font-size: 13px; margin-bottom: 15px;">
+                        ⚠️ Não foi possível localizar este usuário. <br>Deseja <a href="#" onclick="mudarTela('cadastro')" style="color: #00ff9d; text-decoration: underline;">criar uma conta</a>?
+                    </div>
+
+                    <button type="submit" class="btn-acessar" style="width: 100%; text-align: center; border: none; cursor: pointer; margin-bottom: 15px;">Entrar na Conta ➔</button>
+
+                    <p style="color: #8b95a5; font-size: 13px; margin-top: 15px; text-align: center;">
+                        Ainda não tem cadastro? <a href="#" onclick="mudarTela('cadastro')" style="color: #00ff9d; text-decoration: none; font-weight: bold;">Cadastre-se aqui</a>
+                    </p>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA DE CADASTRO                                             -->
+        <!-- ============================================================ -->
+        <section id="cadastro" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('login')" class="btn-voltar">⬅ Voltar ao Login</a>
+                <h1>📝 Criar Novo Cadastro</h1>
+            </div>
+
+            <div style="max-width: 450px; margin: 0 auto; background: rgba(20, 24, 33, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 30px;">
+                <form onsubmit="processarCadastro(event)">
+                    <p style="color: #8b95a5; font-size: 14px; margin-bottom: 20px;">Preencha os dados abaixo para se registar na FutStore:</p>
+                    
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <label style="display: block; font-size: 13px; margin-bottom: 5px; color: #ffffff;">Nome Completo:</label>
+                        <input type="text" id="cad-nome" required placeholder="Seu nome completo" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+                    </div>
+
+                    <div style="margin-bottom: 15px; text-align: left;">
+                        <label style="display: block; font-size: 13px; margin-bottom: 5px; color: #ffffff;">Escolha um Usuário:</label>
+                        <input type="text" id="cad-usuario" required placeholder="Crie um nome de usuário" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+                    </div>
+
+                    <div style="margin-bottom: 20px; text-align: left;">
+                        <label style="display: block; font-size: 13px; margin-bottom: 5px; color: #ffffff;">Crie uma Senha:</label>
+                        <input type="password" id="cad-senha" required placeholder="Sua senha secreta" style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.15); color: #fff;">
+                    </div>
+
+                    <button type="submit" class="btn-acessar" style="width: 100%; text-align: center; border: none; cursor: pointer;">Concluir Cadastro e Continuar 🚀</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA DE PAGAMENTO                                            -->
+        <!-- ============================================================ -->
+        <section id="pagamento" class="tela" style="display: none;">
+            <div class="cabecalho-categoria">
+                <a href="#" onclick="mudarTela('carrinho')" class="btn-voltar">⬅ Voltar</a>
+                <h1>💳 Forma de Pagamento</h1>
+            </div>
+
+            <div style="max-width: 550px; margin: 0 auto; background: rgba(20, 24, 33, 0.8); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 14px; padding: 30px;">
+                <p style="color: #00ff9d; font-weight: 700; margin-bottom: 15px;">Escolha como deseja pagar o seu pedido:</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px;">
+                    <label style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; cursor: pointer; color: #fff;">
+                        <input type="radio" name="pagamento" checked> ⚡ **PIX** (Aprovação imediata com 5% de desconto)
+                    </label>
+                    <label style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; cursor: pointer; color: #fff;">
+                        <input type="radio" name="pagamento"> 📄 **Boleto Bancário** (Vencimento em 2 dias úteis)
+                    </label>
+                    <label style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; cursor: pointer; color: #fff;">
+                        <input type="radio" name="pagamento"> 💳 **Cartão de Crédito** (Até 12x sem juros)
+                    </label>
+                </div>
+
+                <button onclick="finalizarPedido()" class="btn-acessar" style="width: 100%; text-align: center; border: none; cursor: pointer;">Finalizar Pedido 🚀</button>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- TELA DE SUCESSO                                              -->
+        <!-- ============================================================ -->
+        <section id="sucesso" class="tela" style="display: none;">
+            <div style="text-align: center; padding: 50px 20px;">
+                <div style="font-size: 60px; margin-bottom: 20px;">🎉</div>
+                <h1 style="color: #00ff9d; font-size: 32px; margin-bottom: 10px;">Pedido Realizado com Sucesso!</h1>
+                <p style="color: #94a3b8; margin-bottom: 30px;">Obrigado por comprar na FutStore. O seu pedido foi registado no sistema.</p>
+                <button onclick="mudarTela('menu-principal')" class="btn-acessar" style="max-width: 250px; margin: 0 auto; border: none; cursor: pointer;">Voltar à Loja Principal ➔</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- NOTIFICAÇÃO FLUTUANTE (TOAST) -->
+    <div id="toast" style="display:none; position: fixed; bottom: 20px; right: 20px; background: #00ff9d; color: #000; padding: 12px 20px; border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 1000;"></div>
+
+    <!-- RODAPÉ DA LOJA -->
+    <footer>
+        <p>&copy; 2026 FutStore. Contato: <a href="mailto:contato@futstore.com">contato@futstore.com</a></p>
+    </footer>
+
+    <!-- LIGAÇÃO COM O FICHEIRO JAVASCRIPT NA PASTA JS -->
+    <script src="script.js"></script>
+</body>
+</html>

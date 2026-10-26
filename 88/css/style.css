@@ -1,0 +1,253 @@
+/* ============================================================ */
+/* ESTIOS GERAIS DA FUTSTORE                                    */
+/* ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar / Cabeçalho Fixo */
+.navbar {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: #00ff9d;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+.carrinho-topo {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.carrinho-topo:hover {
+    background: rgba(0, 255, 157, 0.1);
+    border-color: #00ff9d;
+}
+
+/* Container Principal */
+.container {
+    max-width: 1200px;
+    margin: 100px auto 50px auto;
+    padding: 0 20px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Cabeçalho de Categoria e Voltar */
+.cabecalho-categoria {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-voltar {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+    width: fit-content;
+}
+
+.btn-voltar:hover {
+    color: #00ff9d;
+}
+
+.cabecalho-categoria h1 {
+    font-size: 26px;
+    color: #fff;
+}
+
+/* Grid de Produtos */
+.grid-produtos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.card-produto {
+    background: rgba(20, 24, 33, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.card-produto:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 255, 157, 0.3);
+}
+
+.card-produto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    background: #111;
+}
+
+.card-produto h3 {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.card-produto .descricao {
+    font-size: 13px;
+    color: #8b95a5;
+    margin-bottom: 12px;
+    flex: 1;
+}
+
+.card-produto .preco {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00ff9d;
+    margin-bottom: 14px;
+}
+
+/* Botão Comprar / Adicionar */
+.btn-comprar {
+    background: linear-gradient(135deg, #00ff9d, #00b36b);
+    color: #0b0f19;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+
+.btn-comprar:hover {
+    opacity: 0.9;
+}
+
+/* Tela Inicial - Grid de Categorias */
+.boas-vindas {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.boas-vindas h1 {
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.boas-vindas h2 {
+    font-size: 20px;
+    color: #00ff9d;
+    margin-bottom: 8px;
+}
+
+.boas-vindas p {
+    color: #94a3b8;
+    font-size: 15px;
+}
+
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.card-categoria {
+    background: rgba(20, 24, 33, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card-categoria:hover {
+    border-color: #00ff9d;
+    transform: translateY(-5px);
+}
+
+.icone-categoria {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.card-categoria h3 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+.card-categoria p {
+    font-size: 13px;
+    color: #8b95a5;
+    margin-bottom: 20px;
+}
+
+.btn-acessar {
+    display: inline-block;
+    background: rgba(0, 255, 157, 0.1);
+    color: #00ff9d;
+    border: 1px solid rgba(0, 255, 157, 0.3);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-acessar:hover {
+    background: #00ff9d;
+    color: #0b0f19;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(15, 23, 42, 0.9);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #8b95a5;
+    font-size: 13px;
+}
+
+footer a {
+    color: #00ff9d;
+    text-decoration: none;
+}
